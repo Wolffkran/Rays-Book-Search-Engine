@@ -1,30 +1,49 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
-import path from 'path';
+// use this to decode a token and get the user's information out of it
+import jwtDecode from 'jwt-decode';
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  base: './',
-  plugins: [react()],
-  server: {
-    port: 3000,
-    open: true,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3001',
-        secure: false,
-        changeOrigin: true,
-      },
-    },
-  },
-  resolve: {
-    alias: {
-      '/src': path.resolve(__dirname, 'client/src'),
-    },
-  },
-  build: {
-    rollupOptions: {
-      external: ['react-bootstrap'],
-    },
-  },
-});
+// create a new class to instantiate for a user
+class AuthService {
+  // get user data
+  getProfile() {
+    return jwtDecode(this.getToken());
+  }
+
+  // check if user's logged in
+  loggedIn() {
+    // Checks if there is a saved token and it's still valid
+    const token = this.getToken();
+    return !!token && !this.isTokenExpired(token); // handwaving here
+  }
+
+  // check if token is expired
+  isTokenExpired(token) {
+    try {
+      const decoded = jwtDecode(token);
+      if (decoded.exp < Date.now() / 1000) {
+        return true;
+      } else return false;
+    } catch (err) {
+      return false;
+    }
+  }
+
+  getToken() {
+    // Retrieves the user token from localStorage
+    return localStorage.getItem('id_token');
+  }
+
+  login(idToken) {
+    // Saves user token to localStorage
+    localStorage.setItem('id_token', idToken);
+    window.location.assign('/');
+  }
+
+  logout() {
+    // Clear user token and profile data from localStorage
+    localStorage.removeItem('id_token');
+    // this will reload the page and reset the state of the application
+    window.location.assign('/');
+  }
+}
+
+export default new AuthService();
