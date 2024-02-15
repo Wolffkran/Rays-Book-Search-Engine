@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useQuery, useMutation } from '@apollo/client';
-import { GET_ME } from '../../queries'; // Import your GET_ME query
-import { REMOVE_BOOK } from '../../mutations'; // Import your REMOVE_BOOK mutation
+import { GET_ME } from '../../client/queries'; // Import your GET_ME query
+import { REMOVE_BOOK } from '../../client/mutations'; // Import your REMOVE_BOOK mutation
 import {
   Container,
   Card,

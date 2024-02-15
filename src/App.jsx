@@ -3,11 +3,11 @@ import { ApolloProvider } from '@apollo/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
-import SearchBooks from './components/SearchBooks';
-import SavedBooks from './components/SavedBooks';
+import SearchBooks from './pages/SearchBooks';
+import SavedBooks from './pages/SavedBooks';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
-import NoMatch from './components/NoMatch';
+/* import NoMatch from './components/NoMatch'; */
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
