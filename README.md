@@ -40,7 +40,7 @@ The MERN Book Search Engine is a web application that leverages the power of Gra
 
 2. Install dependencies:
 
-  ```bash
+  
   cd mern-book-search-engine
   npm install
 
@@ -48,7 +48,7 @@ The MERN Book Search Engine is a web application that leverages the power of Gra
 
 1. Run the application:
 
-  ```bash
+  
   npm start
 
 2. Access the application at http://localhost:3000 in your web browser.
