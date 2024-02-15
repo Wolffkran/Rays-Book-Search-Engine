@@ -1,67 +1,69 @@
-###MERN Book Search Engine
-##Overview
+# MERN Book Search Engine
+
+## Overview
 
 The MERN Book Search Engine is a web application that leverages the power of GraphQL to search for books using the Google Books API. This project initially utilized a RESTful API but has been refactored to incorporate Apollo Server for GraphQL queries and mutations.
 
+## Features
 
-##Features
+- Search for books using the Google Books API.
+- Save book searches to the back end.
+- Utilizes GraphQL for efficient data fetching and modification.
+- User authentication for personalized interactions.
 
-Search for books using the Google Books API.
-Save book searches to the back end.
-Utilizes GraphQL for efficient data fetching and modification.
-User authentication for personalized interactions.
+## Technologies Used
 
-##Technologies Used
+### Front End:
 
-#Front End:
+- React.js
 
-React.js
+### Back End:
 
-#Back End:
+- Node.js
+- Express.js
+- MongoDB (with MongoDB Atlas)
 
-Node.js
-Express.js
-MongoDB (with MongoDB Atlas)
+### GraphQL:
 
-#GraphQL:
+- Apollo Server
 
-Apollo Server
-Deployment:
+### Deployment:
 
-Heroku
+- Heroku
 
-##Installation
+## Installation
 
-1.Clone the repository:
+1. Clone the repository:
 
+   ```bash
+   git clone https://github.com/your-username/mern-book-search-engine.git
 
-git clone https://github.com/your-username/mern-book-search-engine.git
+2. Install dependencies:
 
-2.
-Install dependencies:
+  ```bash
+  cd mern-book-search-engine
+  npm install
 
-cd mern-book-search-engine
-npm install
+## Usage
 
-##Usage
+1. Run the application:
 
-Run the application:
+  ```bash
+  npm start
 
+2. Access the application at http://localhost:3000 in your web browser.
 
-npm start
-Access the application at http://localhost:3000 in your web browser.
-
-##GraphQL API
+## GraphQL API
 The application now uses Apollo Server for GraphQL queries and mutations. The GraphQL endpoint is available at /graphql.
 
-##Authentication
+## Authentication
 The authentication middleware has been modified to work seamlessly with the GraphQL API, ensuring secure and personalized user interactions.
 
-##Deployment
+## Deployment
 Deploy your application to Heroku with a MongoDB database using MongoDB Atlas. Refer to the Deploy with Heroku and MongoDB Atlas walkthrough for detailed instructions.
 
-##Contributing
+## Contributing
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-##License
+## License
 This project is licensed under the MIT License.
